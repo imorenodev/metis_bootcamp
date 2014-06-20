@@ -33,7 +33,7 @@ class Discography
         if !@db[artist] # if the hash key doesn't point to any value (if it doesn't exist)
           @db[artist] = [song] # initializes db hash key [artist] and assigns it to new array containing value [song]
         else
-          @db[artist] << song
+          @db[artist] << song # appends song to the array that is being referenced by the hash key [artist] in db hash
         end
       end
       counter += 1
