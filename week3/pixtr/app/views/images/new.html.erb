@@ -1,0 +1,12 @@
+<%= form_for([@gallery, @image]) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+
+  <%= form.label :url %>
+  <%= form.text_field :url %>
+
+  <%= form.submit "Create" %>
+<% end %>
