@@ -45,14 +45,6 @@ class OldestYoungest
     end
     puts "#{@temp_youngest} is the youngest."
   end
-
-  def older?(person)
-    # returns true if person is older
-  end
-
-  def younger?(person)
-    # returns true if person is younger
-  end
 end
 
 OldestYoungest.new.play

@@ -1,0 +1,7 @@
+<h1>Galleries</h1>
+
+<a href="/galleries/new">New</a>
+
+<% @galleries.each do |gallery| %>
+  <a href="/<%= gallery.id %>"><%= gallery.name.capitalize %></a>
+<% end %>

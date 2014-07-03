@@ -1,0 +1,7 @@
+<h2>Choose a deck:</h2>
+
+<% @decks.each do |deck| %>
+  <div>
+    <a href="/decks/<%= deck.id %>"><%= deck.name %>
+  </div>
+<% end %>

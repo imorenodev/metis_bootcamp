@@ -1,0 +1,9 @@
+<form action="/decks/<%= @deck.id %>/result" method="POST">
+  <input type="hidden" name="card[answer]" value="<%= @random_deck.back %>">
+
+  <label><%= @random_deck.front %>: </label>
+  <input style="text" name="card[guess]"> <!--hash name = 'card' key = 'guess' value = 'user input' -->
+
+  <input type="submit" value="Submit Guess">
+</form>
+

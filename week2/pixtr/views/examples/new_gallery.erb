@@ -1,0 +1,11 @@
+<form action="/galleries" method="POST">  <!-- action is the path we'll be posting to when we click submit. This is where we'll send all the data "/galleries" -->
+  <div>
+    <label>Gallery Name</label>
+    <input type="text" name="gallery[name]"> <!-- creates key gallery with subhash key of whatever is in [name] and the value is whatever is typed into the field -->
+  </div>
+  <div>
+    <label>Gallery Description</label>
+    <input type="text" name="gallery[description]"> 
+  </div>
+  <input type="submit" value="Create Gallery">
+</form>

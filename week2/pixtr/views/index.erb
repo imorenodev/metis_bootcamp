@@ -1,0 +1,12 @@
+<h1>Galleries Index</h1>
+
+<% @galleries.each do |gallery| %>
+  <div>
+  <ul>
+    <li><a href="/galleries/<%= gallery.id %>"><%= gallery.name %></a></li>
+  </ul>
+  </div>
+<% end %>
+<div>
+  <a href="/galleries/new">Create Gallery</a>
+</div>
