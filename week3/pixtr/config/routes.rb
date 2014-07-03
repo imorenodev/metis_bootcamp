@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root to: "galleries#index" #sets root page
 
+  resource :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
   resources :galleries do
-    resources :images, only: [:new, :create]
+    resources :images
+    #resources :images, only: [:new, :create, :show]
   end
 
   #resources :galleries

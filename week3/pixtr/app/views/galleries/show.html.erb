@@ -1,11 +1,11 @@
 <h1><%= @gallery.name %></h1>
-<h2><%= @gallery.description %></h2>
 
-<%= link_to "Edit", edit_gallery_path(@gallery) %>
-<!-- <%= link_to "Edit", "/galleries/#{@gallery.id}/edit" %> -->
+<p><%= @gallery.description %></p>
 
-<%= link_to "Destroy", @gallery, method: :delete, data: { confirm: "are you sure?" } %>
-<!-- <%= link_to "Destroy", "/galleries/#{@gallery.id}", method: :delete, data: { confirm: "are you sure?" } %> -->
+<nav>
+  <%= link_to "Edit", edit_gallery_path(@gallery) %>
+  <%= link_to "Destroy", @gallery, method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to "Add image", new_gallery_image_path(@gallery) %>
+</nav>
 
-<%= link_to "Add Image", new_gallery_image_path(@gallery) %>
-<!-- <%= link_to "Add Image", "/galleries/#{@gallery.id}/images/new" %> -->
+<%= render @images %>

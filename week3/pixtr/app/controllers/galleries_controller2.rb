@@ -3,6 +3,12 @@ class GalleriesController < ApplicationController
     @galleries = Gallery.all
   end
 
+  def destroy
+    gallery = Gallery.find(params[:id])
+    gallery.destroy
+    redirect_to galleries_path #path helper
+  end
+
   def new
     @gallery = Gallery.new
   end
@@ -18,13 +24,7 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find(params[:id])
-    @images = @gallery.images
-  end
-
-  def destroy
-    gallery = Gallery.find(params[:id])
-    gallery.destroy
-    redirect_to galleries_path
+    @images = @gallery.images #array of active record objects of 'image' instances (ActiveRecord::Associations:CollectionProxy)
   end
 
   def edit
@@ -32,17 +32,16 @@ class GalleriesController < ApplicationController
   end
 
   def update
-    @gallery = Gallery.find(params[:id])
-    if @gallery.update(gallery_params)
-      redirect_to @gallery
-    else
-      render :edit
-    end
+    gallery = Gallery.find(params[:id])
+    gallery.update(gallery_params)
+    redirect_to "/galleries/#{gallery.id}"
   end
 
   private
 
   def gallery_params
-    params.require(:gallery).permit(:name, :description)
+    params.
+    require(:gallery).
+    permit(:name, :description)
   end
 end
